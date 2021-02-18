@@ -3,7 +3,7 @@ package org.example;
 public class AutoVehicle extends Vehicle {
 
     //"has-a" relationship
-    Engine engine;
+    private Engine engine;
 
     /**
      * constructor syntax:
@@ -17,5 +17,11 @@ public class AutoVehicle extends Vehicle {
         this.engine = engine;
     }
 
-    
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
 }

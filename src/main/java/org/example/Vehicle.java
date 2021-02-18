@@ -2,13 +2,13 @@ package org.example;
 
 public class Vehicle {
 
-    String name;
-    double mileage;
-    String color;
-    double maxSpeed;
-    boolean running;
-    double fuelLevel;
-    double traveledDistance;
+    private String name;
+    private double mileage;
+    private String color;
+    private double maxSpeed;
+    private boolean running;
+    private double fuelLevel;
+    private double traveledDistance;
 
     /**
      * method syntax:
@@ -40,5 +40,61 @@ public class Vehicle {
         fuelLevel -= spentFuel;
         System.out.println("Remained fuel: " + fuelLevel + " l.");
         return distance;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public boolean isRunning() {
+        return running;
+    }
+
+    public void setRunning(boolean running) {
+        this.running = running;
+    }
+
+    public double getFuelLevel() {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel(double fuelLevel) {
+        this.fuelLevel = fuelLevel;
+    }
+
+    public double getTraveledDistance() {
+        return traveledDistance;
+    }
+
+    public void setTraveledDistance(double traveledDistance) {
+        this.traveledDistance = traveledDistance;
     }
 }
