@@ -58,5 +58,13 @@ public class App {
 //        System.out.println("Total count from car after setting car2: " + car.totalCount);
 //        System.out.println("Total count from car2: " + car2.totalCount);
 //        System.out.println("Total count from Vehicle class: " + Vehicle.totalCount);
+
+        //method overloading
+        car2.accelerate(100);
+        car.accelerate(100, 3);
+
+        //constructor overloading
+        new AutoVehicle(engine);
+        new AutoVehicle();
     }
 }

@@ -9,6 +9,11 @@ public class Car extends AutoVehicle {
         super(engine);
     }
 
+    public Car() {
+        //super(); it would be the same if "super()" was there but,
+        //any constructor will try to call the "no-parameter" constructor of the parent class
+    }
+
     public int getDoorCount() {
         return doorCount;
     }

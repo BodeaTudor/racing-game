@@ -6,10 +6,10 @@ public class Vehicle {
      * constant syntax:
      * 1. private(usually they are public) static final int TOTAL_COUNT = value (mandatory)-> constant;
      * 2. public static final int VARIABLE_NAME - this is how a constant look
-     *                                          - "final" keyword transforms the variable into a constant
-     *                                          - the initial value that the variable gets can never be changed
-     *                                          - getting the initial value is mandatory
-     *                                          - the convention is to write constant in SNAKE_CASE
+     * - "final" keyword transforms the variable into a constant
+     * - the initial value that the variable gets can never be changed
+     * - getting the initial value is mandatory
+     * - the convention is to write constant in SNAKE_CASE
      */
     private static int totalCount;
 
@@ -55,6 +55,18 @@ public class Vehicle {
         fuelLevel -= spentFuel;
         System.out.println("Remained fuel: " + fuelLevel + " l.");
         return distance;
+    }
+
+    /**
+     * Method overloading:
+     * a method can be overloaded as long as the parameter list is different:
+     * - number of parameters
+     * - parameter types
+     * - parameters order
+     * !!! the parameter name doesn't count !!!
+     */
+    public double accelerate(double speed) {
+        return accelerate(speed, 1);
     }
 
     public String getName() {

@@ -17,6 +17,13 @@ public class AutoVehicle extends Vehicle {
         this.engine = engine;
     }
 
+    //constructor overloading
+    public AutoVehicle() {
+        //this.engine = new Engine;
+        //this() - means constructor of the current class
+        this(new Engine());
+    }
+
     public Engine getEngine() {
         return engine;
     }
