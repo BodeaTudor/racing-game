@@ -91,5 +91,23 @@ public class App {
         Vehicle testCar = new Car();
         //type-casting
         ((Car) testCar).getDoorCount();
+
+        //comparing objects
+        String a = "test";
+        String b = "test";
+        String c = new String("test");
+
+        System.out.println(a == b);
+        System.out.println(a == c);
+        System.out.println(a.equals(c));
+
+        Vehicle vehicle1 = new Vehicle();
+        vehicle1.setName("Dacia");
+
+        Vehicle vehicle2 = new Vehicle();
+        vehicle1.setName("Dacia");
+
+        System.out.println(vehicle1 == vehicle2);
+        System.out.println(vehicle1.equals(vehicle2));
     }
 }

@@ -8,7 +8,7 @@ public class CheatingVehicle extends Vehicle{
      * but you can't restrain it to "private"
      * - CO-VARIANT RETURN TYPE - with the return type for example if the superclass is returning a Vehicle you can return
      * a Car but you cannot return a String or something that has no business with Vehicle
-     * - if the method overridden throws an Exception you can override the methods throed exception only if the exception
+     * - if the method overridden throws an Exception you can override the methods throwed exception only if the exception
      * is not enlarged you can only restrain it
      * !!! OVERRIDING APPLIES ONLY FOR METHODS AND ONLY IN THE CONTEXT OF INHERITANCE !!!
      */
