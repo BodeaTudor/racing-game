@@ -10,7 +10,6 @@ public class Vehicle {
     double fuelLevel;
     double traveledDistance;
 
-
     /**
      * method syntax:
      * 1. access modifier = public, protected, default(package-private), private
@@ -19,6 +18,7 @@ public class Vehicle {
      * 4. method parameters
      * 5. after {} method implementation
      */
+
     public double accelerate(double speed, double durationInHours) {
         //concatenation
         System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");

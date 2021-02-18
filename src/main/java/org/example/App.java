@@ -8,7 +8,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        Car car = new Car();
+        Engine engine = new Engine();
+        engine.manufacturer = "Renault";
+
+        Car car = new Car(engine);
         car.name = "Car";
         car.doorCount = 4;
         car.mileage = 9.5;
@@ -17,14 +20,12 @@ public class App
         car.running = true;
         car.fuelLevel = 50;
 
-        Engine engine = new Engine();
-        engine.manufacturer = "Renault";
 
         car.engine = engine;
 
         System.out.println(car.engine.manufacturer);
 
-        Car car2 = new Car();
+        Car car2 = new Car(engine);
         car2.name = "Car2";
         car2.doorCount = 2;
         car2.mileage = 15;
