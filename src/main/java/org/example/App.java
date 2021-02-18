@@ -47,5 +47,8 @@ public class App
 
         System.out.println(car.maxSpeed);
         System.out.println(car.engine);
+
+        double distance = car.accelerate(60, 1);
+        System.out.println("Distance in App.main: " + distance);
     }
 }
