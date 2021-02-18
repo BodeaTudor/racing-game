@@ -2,6 +2,17 @@ package org.example;
 
 public class Vehicle {
 
+    /**
+     * constant syntax:
+     * 1. private(usually they are public) static final int TOTAL_COUNT = value (mandatory)-> constant;
+     * 2. public static final int VARIABLE_NAME - this is how a constant look
+     *                                          - "final" keyword transforms the variable into a constant
+     *                                          - the initial value that the variable gets can never be changed
+     *                                          - getting the initial value is mandatory
+     *                                          - the convention is to write constant in SNAKE_CASE
+     */
+    private static int totalCount;
+
     private String name;
     private double mileage;
     private String color;
@@ -9,6 +20,10 @@ public class Vehicle {
     private boolean running;
     private double fuelLevel;
     private double traveledDistance;
+
+    public Vehicle() {
+        totalCount++;
+    }
 
     /**
      * method syntax:
@@ -96,5 +111,9 @@ public class Vehicle {
 
     public void setTraveledDistance(double traveledDistance) {
         this.traveledDistance = traveledDistance;
+    }
+
+    public static int getTotalCount() {
+        return totalCount;
     }
 }
