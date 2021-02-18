@@ -26,7 +26,7 @@ public class Vehicle {
     }
 
     /**
-     * method syntax:
+     * method syntax(method signature) :
      * 1. access modifier = public, protected, default(package-private), private
      * 2. return type = String, double, int, void, objects etc.
      * 3. method name
@@ -36,8 +36,6 @@ public class Vehicle {
 
     public double accelerate(double speed, double durationInHours) {
         //concatenation
-        System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");
-
         System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");
 
         double distance = speed * durationInHours;
@@ -127,5 +125,18 @@ public class Vehicle {
 
     public static int getTotalCount() {
         return totalCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", mileage=" + mileage +
+                ", color='" + color + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                ", running=" + running +
+                ", fuelLevel=" + fuelLevel +
+                ", traveledDistance=" + traveledDistance +
+                '}';
     }
 }

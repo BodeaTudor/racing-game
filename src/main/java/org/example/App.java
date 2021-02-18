@@ -66,5 +66,18 @@ public class App {
         //constructor overloading
         new AutoVehicle(engine);
         new AutoVehicle();
+
+        //overriding toString method
+        System.out.println(car);
+
+        //overriding
+        CheatingVehicle cheater = new CheatingVehicle();
+        cheater.setName("Car2");
+        cheater.setColor("black");
+        cheater.setMaxSpeed(500);
+        cheater.setRunning(true);
+
+        cheater.accelerate(60, 1);
+        car.accelerate(60, 1);
     }
 }

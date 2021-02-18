@@ -20,4 +20,12 @@ public class Engine {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    @Override
+    public String toString() {
+        return "Engine{" +
+                "manufacturer='" + manufacturer + '\'' +
+                ", capacity=" + capacity +
+                '}';
+    }
 }

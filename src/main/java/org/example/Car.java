@@ -21,4 +21,11 @@ public class Car extends AutoVehicle {
     public void setDoorCount(int doorCount) {
         this.doorCount = doorCount;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "doorCount=" + doorCount +
+                '}';
+    }
 }
