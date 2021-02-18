@@ -79,5 +79,17 @@ public class App {
 
         cheater.accelerate(60, 1);
         car.accelerate(60, 1);
+
+        //polymorphism
+        Vehicle cheater2 = new CheatingVehicle();
+        cheater2.setName("Cheater!");
+        cheater2.setColor("blue");
+        cheater2.setMaxSpeed(500);
+        cheater2.setRunning(true);
+        cheater2.accelerate(30, 2);
+
+        Vehicle testCar = new Car();
+        //type-casting
+        ((Car) testCar).getDoorCount();
     }
 }
