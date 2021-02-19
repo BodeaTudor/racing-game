@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,7 +17,7 @@ public class Game {
     // Map<key, value> Example: Map<String, Vehicle> map = new HashMap<>() or new SortedMap<>().
     // Map is a collection of key-value pair.
 
-    public void start() {
+    public void start() throws Exception {
         initializeTracks();
         displayTracks();
 
@@ -98,9 +99,25 @@ public class Game {
         }
     }
 
-    private int getPlayerCountFromUser() {
+    private int getPlayerCountFromUser() throws Exception {
         System.out.println("Please specify the number of players (use numbers only): ");
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        try {
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            throw new Exception("You entered an invalid value. Please restart the game!");
+//        }catch (RuntimeException e){
+//            return 0;
+//        }finally {
+//            System.out.println("Always executed");
+//        }
+//            It is recommended when we catch an exception to refine the threads by specifying how should each exception
+//            behave
+//        } finally {
+//            //finally block is always executed
+//            System.out.println("Read input from user.");
+//        }
+//        return getPlayerCountFromUser();
+        }
     }
 }
