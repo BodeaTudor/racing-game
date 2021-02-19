@@ -1,7 +1,10 @@
 package org.example;
 
+import java.text.DecimalFormat;
+
 public class Vehicle {
 
+    DecimalFormat df = new DecimalFormat("#,###,##0.00");
     /**
      * constant syntax:
      * 1. private(usually they are public) static final int TOTAL_COUNT = value (mandatory)-> constant;
@@ -37,7 +40,7 @@ public class Vehicle {
     public double accelerate(double speed, double durationInHours) {
 
         if (fuelLevel <= 0) {
-            System.out.println("You don't have enough fuel to accelerate! Fuel level: " + fuelLevel);
+            System.out.println("You don't have enough fuel to accelerate! Fuel level: " + df.format(fuelLevel) + "\n");
 
             return 0;
         }
@@ -48,22 +51,22 @@ public class Vehicle {
         }
 
         //concatenation
-        System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");
+        System.out.println("\n" + name + " is accelerating with " + speed + " km/h for " + durationInHours + " h.");
 
         double distance = speed * durationInHours;
-        System.out.println("Traveled " + distance + " km.");
+        System.out.println("Traveled " + distance + " km.\n");
 
 //        traveledDistance = traveledDistance + distance;
 //        same result as the above statement
         traveledDistance += distance;
-        System.out.println("Total traveled distance: " + traveledDistance + " km.");
+        System.out.println("Total traveled distance: " + traveledDistance + " km.\n");
 
         double spentFuel = distance / 100 * mileage;
-        System.out.println("Spent fuel: " + spentFuel + " l.");
+        System.out.println("Spent fuel: " + df.format(spentFuel) + " l.");
 
 //        fuelLevel = fuelLevel - spentFuel;
         fuelLevel -= spentFuel;
-        System.out.println("Remained fuel: " + fuelLevel + " l.");
+        System.out.println("Remained fuel: " + df.format(fuelLevel) + " l.\n");
         return distance;
     }
 
