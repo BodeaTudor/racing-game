@@ -1,12 +1,25 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Game {
 
     private Track[] tracks = new Track[3];
+    private List<Vehicle> players = new ArrayList<>();
 
     public void start() {
         initializeTracks();
         displayTracks();
+
+        int playersCount = 2;
+
+        for (int i = 0; i < playersCount; i++) {
+            addPlayers();
+        }
+
+        displayPlayers();
     }
 
     private void initializeTracks() {
@@ -48,6 +61,26 @@ public class Game {
         for (int i = 0; i < tracks.length; i++) {
             if (tracks[i] != null) {
                 System.out.println((i + 1) + ". " + tracks[i].getName());
+            }
+        }
+    }
+
+    private void addPlayers() {
+        Vehicle vehicle = new Vehicle();
+        vehicle.setName("Mercedes");
+        vehicle.setFuelLevel(60);
+        vehicle.setMileage(ThreadLocalRandom.current().nextDouble(4.5, 20));
+        vehicle.setMaxSpeed(200);
+
+        players.add(vehicle);
+    }
+
+    private void displayPlayers() {
+        System.out.println("Today's players are:");
+
+        for (int i = 0; i < players.size(); i++) {
+            if (players.get(i) != null) {
+                System.out.println((i + 1) + ". " + players.get(i).getName() + " - mileage: " + players.get(i).getMileage());
             }
         }
     }
