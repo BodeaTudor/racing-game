@@ -21,6 +21,8 @@ public class Game {
         initializeTracks();
         displayTracks();
 
+        Track selectedTrack = getTrackSelectedByUser();
+
         int playersCount = getPlayerCountFromUser();
 
         for (int i = 0; i < playersCount; i++) {
@@ -28,6 +30,34 @@ public class Game {
         }
 
         displayPlayers();
+
+        boolean winnerNotKnown = true;
+        int playersWithoutFuel = 0;
+
+        //do-while loop
+//        Used when we want to execute at least once the instructions given. Example:
+//        do{
+//            System.out.println("DoingSomething");
+//        }while (winnerNotKnown etc.);
+        while (winnerNotKnown && playersWithoutFuel < players.size()) {
+            //enhanced for or for-each
+            // How to read it:
+            // "For each player of type Vehicle from the list players execute code from brackets."
+            // With for-each you cannot enter infinite loop
+            for (Vehicle player : players) {
+                player.accelerate(getSpeedFromUser());
+
+                if (player.getTraveledDistance() >= selectedTrack.getLength()) {
+                    System.out.println("Congrats! the winner is: " + player.getName());
+                    winnerNotKnown = false;
+                    break;
+                }
+
+                if (player.getFuelLevel() <= 0) {
+                    playersWithoutFuel++;
+                }
+            }
+        }
     }
 
     private void initializeTracks() {
@@ -71,6 +101,22 @@ public class Game {
                 System.out.println((i + 1) + ". " + tracks[i].getName());
             }
         }
+    }
+
+    private Track getTrackSelectedByUser() {
+        System.out.println("Please choose a track (enter the number of the track):");
+        try {
+            Scanner scanner = new Scanner(System.in);
+            int trackNumber = scanner.nextInt();
+            Track track = tracks[trackNumber - 1];
+            System.out.println("Selected track: " + track.getName());
+            return track;
+        } catch (InputMismatchException | ArrayIndexOutOfBoundsException | NullPointerException e) {
+            System.out.println("You entered an invalid track number. Please try again...");
+            //recursion - a method invoking itself
+            return getTrackSelectedByUser();
+        }
+
     }
 
     private void addPlayers() {
@@ -118,6 +164,17 @@ public class Game {
 //            System.out.println("Read input from user.");
 //        }
 //        return getPlayerCountFromUser();
+        }
+    }
+
+    private double getSpeedFromUser() {
+        System.out.println("Please enter acceleration speed:");
+        Scanner scanner = new Scanner(System.in);
+        try {
+            return scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("You entered an invalid value. Please try again...");
+            return getSpeedFromUser();
         }
     }
 }
